@@ -1,0 +1,51 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Fakefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ksmith <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/11/07 23:03:04 by ksmith            #+#    #+#              #
+#    Updated: 2016/11/07 23:38:05 by ksmith           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+#/*
+#IDIR = dirp_to_includes
+#SDIR = dirp_to_sourcefiles
+#
+#NAME = name of your program without .extension
+#OBJS = other files to include in compiling
+#
+#all: $(variable) #target, action, that needs to be carried, can specify flags and commands here.
+#
+#CC = (name of compilier)
+#CFLAGS = -Flag to run with the compilier
+#	also can run -Ipath/to/include/dir or -I$(IDIR)
+#RM = set custom commands to tasks that you want to run (rm -rf)
+#*/
+#//
+#// in the 'OBJS' variable i include all files beccause this is a master makefile only to be used by the master. don't expect to understand all things you see here. ask.
+#// $@ evaluates to 'all'
+#// $< evaluates to library.c
+#// $^ evaluates to library.c and main.c
+
+
+# -*- Makefile -*-
+
+IDIR	= including
+SDIR	= resorcful
+
+NAME	= yourprogram
+OBJS	= *.*
+
+
+CC		= gcc
+CFLAGS	= -Wall -Werror -Wextra -I$(IDIR)
+RM		= rm -f
+all		: day
+day		: $(NAME)
+$(NAME)	: $(OBJS) ar rcs $@ $^
+%.o		: $(SDIR)/%.c $(CC) $(CFLAGS) -c $<
+clean	: $(RM) $(OBJS)
+fclean	: clean $(RM) $(NAME)
+re		: fclean all

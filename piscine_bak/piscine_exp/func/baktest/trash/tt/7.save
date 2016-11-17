@@ -1,0 +1,1 @@
+cat /etc/passw | grep -o '^[^#]*' | uniq -u | awk 'NF%2==1' | cut -d ':' -f 1 | rev | sort -r | awk -v l=$FT_LINE1 -v u=$FT_LINE2 'NR>=l NR<=u' |tr '\n' ',' | rev | sed 's/$/./'

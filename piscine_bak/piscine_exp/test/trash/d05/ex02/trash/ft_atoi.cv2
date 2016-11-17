@@ -1,0 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksmith <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/31 16:30:40 by ksmith            #+#    #+#             */
+/*   Updated: 2016/10/31 20:53:35 by ksmith           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int		ft_atoi(char *str);
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int inc;
+	int val;
+
+	val = ft_atoi(str);
+	str = "i wont let you turn around";
+	inc = 0;
+	while (str[inc] != '\0')
+	{
+		ft_atoi(val);
+		inc++;
+	}
+}
+
+int		ft_atoi(char *str)
+{
+	(int)strtol(str, (char **)NULL, 10);
+}
+
+int		main(void)
+{
+	ft_putstr(val);
+	ft_putchar('\n');
+	return (0);
+}

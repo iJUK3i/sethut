@@ -1,0 +1,80 @@
+day00
+vogsphere@vgs.42.us.org:intra/2016/activities/piscine_c_day_00/ksmith
+
+notez that i have
+
+git repo - vogsphere@vgs.42.us.org:intra/2016/activities/piscine_c_day_00/ksmith
+gitscm.com tutorial
+
+:vs ? 'what is this'
+
+100MB limit on git repo
+
+how to make a symbolic link?
+how to make multiple dirs at once.... mkdir -p level1dir{1..10}/level2dir{1..7}/level3dir{1..4}
+
+ldap_get_dn
+
+sed -e commands clean up ex05
+
+ldapmodify ldapadd https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system
+
+list all files * everywhere... ls -LR
+
+patch --dry-run
+
+diff a b > sw2.diff
+diff sw.diff sw2.diff
+
+find -name '*.sh'
+find / -type f -name '*.conf'
+find / -type c
+find . -type f -perm 644 -exec chmod 664 {} \;
+ #find files with 644 perm and modify to 664 perm#
+
+#command to output to file..$ls > myfile.txt
+$ls > > myfile.txt
+#to append more data to the file
+
+
+$ls -l | less
+# make a lot of text output scrolling
+
+Printing from the command line. Linux provides a program called lpr that accepts standard input and sends it to the printer. It is often used with pipes and filters. Here are a couple of examples:
+
+cat poorly_formatted_report.txt | fmt | pr | lpr
+
+cat unsorted_list_with_dupes.txt | sort | uniq | pr | lpr
+
+using \( -name "*~" -o -name "#*" -o -name "*#" \)
+   # allow multiple params 
+
+$file test -m ft_magic
+  27	string	42	42 file
+#start looking after the 27th char for a pair'd 42 and tell me you found it by describing 42 file
+
+| grep "cn" | 
+#clean up the output of ldapsearc
+
+git add *
+git commit -am "message for files"
+git remote add origin server.address.com
+git push --all origin
+git push
+git pull 
+
+-print to ex 10
+
+echo, cat, more?
+head, tail, grep, redirections, sort, cut
+wc, ifconfig, bc find, env, export
+stdout, stderr
+
+ifconfig | grep 'ether ' | cut -d ' ' -f 2
+#
+
+Try: sed -n 'p;n' file or sed 'n;d' file for outputting the odd lines
+#
+
+awk cat /etc/passwd | grep -o '^[^#]*' | awk 'NR%2==0' | uniq -u 
+
