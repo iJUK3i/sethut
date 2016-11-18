@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   afffan.c                                           :+:      :+:    :+:   */
+/*   ascend.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksmith <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 15:31:41 by ksmith            #+#    #+#             */
-/*   Updated: 2016/11/17 15:47:37 by ksmith           ###   ########.fr       */
+/*   Created: 2016/11/18 06:19:00 by ksmith            #+#    #+#             */
+/*   Updated: 2016/11/18 06:23:19 by ksmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		main(int ac, char **av)
+void	ft_print_numbers(void)
 {
-	int x;
-	char *o;
+	int nbr;
 
-	o = av[1];
-	if (ac >= 2)
+	nbr = '0';
+	while (nbr <= '9')
 	{
-		while (o != '\0')
-		{
-			if (*o == 'a')
-			{
-				write (1, "a", 1);
-				break;
-			}
-			o++;
-		}
+		write (1, &nbr, 1);
+		nbr++;
 	}
-	else if (ac < 2)
-	{
-		write(1, "a", 1);
-		write(1, "\n", 1);
-	}
-	return (0);
+	write (1, "\n", 1);
 }
 
-
-
+int		main(void)
+{
+	ft_print_numbers();
+	return (0);
+}
