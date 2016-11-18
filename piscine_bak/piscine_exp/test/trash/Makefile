@@ -5,31 +5,32 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ksmith <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/11/13 07:24:29 by ksmith            #+#    #+#              #
-#    Updated: 2016/11/13 07:33:44 by ksmith           ###   ########.fr        #
+#    Created: 2016/11/08 02:38:25 by ksmith            #+#    #+#              #
+#    Updated: 2016/11/08 16:19:34 by ksmith           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-IDIR= includes
-SDIR= srcs
-
-NAME= eval_expr
-OBJS= ft_atoi.o ft_put.o shya.o main.o oper.o llist.o s2q.o ss.o
-
+SDIR= srcs/
+IDIR= includes/
+NAME= libft.a
+SRC= srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
+OBJS= ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 CC= gcc
-CFLAGS= -Wall -Werror -Wextra
-RM= rm -f
+CFLAGS= -Wall -Werror -Wextra -c -I$(SDIR) -I$(IDIR)
+RM= /bin/rm -f
+RAN= ranlib
+L= ar rc
 QQ= rm *.c *.o *.a *.h
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+$(NAME):
+	$(CC) $(CFLAGS) $(SRC)
+	$(L) $(NAME) $(OBJS)
+	$(RAN) $(NAME)
 
-%.o: $(SDIR)/%.c
-	$(CC) $(CFLAGS) -c $<
-
-clean: $(RM) $(OBJS)
+clean:
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
